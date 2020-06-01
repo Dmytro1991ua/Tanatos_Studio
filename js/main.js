@@ -66,3 +66,24 @@ window.onscroll = function () {
         }
     }
 }
+
+//open navbar on click to a hamburger menu
+const toggleBtn = document.querySelector(".navigation__menu");
+toggleBtn.addEventListener("click", () => {
+    document.querySelector(".nav").classList.toggle("show");
+    document.querySelector(".navigation__toggle").classList.toggle("active");
+    document.querySelector("body").classList.toggle("lock"); //class to apply and remove overflow: hidden to a body when a nav in active
+});
+
+//close a navigation on click to a specific link
+const navbar = document.querySelector(".nav");
+const links = navbar.querySelectorAll(".nav__link"); //select all links (<a>)
+
+//loop through all links
+links.forEach(function (link) {
+    link.addEventListener("click", () => {
+        document.querySelector(".nav").classList.toggle("show");
+        document.querySelector("body").classList.remove("lock");
+        document.querySelector(".navigation__toggle").classList.toggle("active");
+    });
+});
