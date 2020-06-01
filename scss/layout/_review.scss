@@ -1,0 +1,84 @@
+.review-section {
+    padding: 6.5rem 0;
+    background: url(../img/bg-review-small.png) (center / cover) no-repeat fixed;
+    position: relative;
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
+        background: url(../img/bg-review.png) (center / cover) no-repeat fixed;
+    }
+
+    @include respond(phone) {
+        padding: 3rem 0;
+    }
+
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__img-wrapper {
+        overflow: hidden;
+    }
+
+    &__img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        transition: all .4s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            cursor: pointer;
+        }
+    }
+
+    &__paragraph {
+        max-width: 79.7rem;
+        font-size: 1.8rem;
+        text-align: center;
+        color: $color-secondary;
+
+        @include respond(phone) {
+            max-width: 23.7rem;
+        }
+
+
+        & > * {
+            display: block;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: 50%;
+        height: 3.2rem;
+
+        @include respond(tab-port) {}
+
+
+        @include respond(phone) {
+            top: 58%;
+            height: 4.5rem;
+        }
+
+
+        &--left {
+            right: 77%;
+
+            @include respond(tab-port) {
+                right: 85%;
+            }
+        }
+
+        &--right {
+            left: 77%;
+
+            @include respond(tab-port) {
+                left: 85%;
+            }
+        }
+    }
+}

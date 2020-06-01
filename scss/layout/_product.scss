@@ -1,0 +1,9 @@
+.section-product {
+	padding-top: 5.5rem;
+	padding-bottom: 7rem; 
+
+	@include respond(phone) {
+		padding-top: 3.5rem;
+		padding-bottom: 4rem;
+	}
+}

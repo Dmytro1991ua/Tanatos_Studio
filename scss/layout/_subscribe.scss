@@ -1,0 +1,94 @@
+.section-subscribe {
+    padding-top: 7rem;
+    padding-bottom: 5rem;
+    background: url(../img/bg-subscribe-small.png) (center / cover) no-repeat fixed;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    @include respond(phone) {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+
+    &__body {
+        @include respond(phone) {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            align-items: stretch;
+            padding: 0 1.5rem;
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @include respond(phone) {
+            margin-right: 0;
+            margin-bottom: 3rem;
+            display: flex;
+				flex-direction: column;
+				align-items: stretch;
+        }
+    }
+
+    &__input {
+        display: flex;
+        flex-direction: column;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__email {
+        width: 50rem;
+        height: 4.7rem;
+        font-size: 1.4rem;
+        font-family: inherit;
+        border-radius: 1rem;
+        padding: 1.5rem 0 1.5rem 2rem;
+        margin-right: 1.5rem;
+
+        @include respond(phone) {
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+
+
+        &::placeholder {
+            font-family: inherit;
+            font-size: 1.3rem;
+            color: $color-primary;
+        }
+
+        &:focus {
+            @include input-focus;
+        }
+
+        &:focus:invalid {
+            border: 3px solid $color-light-orange;
+        }
+    }
+
+    &__label {
+        display: block;
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $color-secondary;
+        margin-left: .7rem;
+        margin-top: .7rem;
+        transition: all .5s;
+    }
+
+    &__email:placeholder-shown + &__label { // == this adjacent siblings(соседний селектор - label is a adjacent sibling of input)where adjacent sibling(lable) has to be right after (input) (in HTML markup first  - input and than label) not the oposite (when first label than input)  selector allows us style label not an input (we want label to hidden)
+        opacity: 0;
+        visibility: hidden; //visibility in pair with opacity: 0 allows us to animate this effect
+        transform: translateY(-4rem);
+    }
+}

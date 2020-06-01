@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,700&display=swap");
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:800&display=swap"); // Open Sans Extrabold, font-family: 'Open Sans', sans-serif;
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:600&display=swap"); // Open Sans SemiBold, font-family: 'Open Sans', sans-serif;
+
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/animation";
+@import "base/base";
+@import "base/normalize";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/btn";
+@import "components/cards";
+@import "components/form";
+@import "components/gallery";
+@import "components/media-links";
+@import "components/modal";
+@import "components/sections-title";
+@import "components/swiper-review";
+
+@import "layout/contact";
+@import "layout/container";
+@import "layout/copyright";
+@import "layout/header";
+@import "layout/features";
+@import "layout/navigation";
+@import "layout/product";
+@import "layout/review";
+@import "layout/subscribe";
+@import "layout/team";

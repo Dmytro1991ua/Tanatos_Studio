@@ -1,0 +1,79 @@
+.slides {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    font-size: .3rem;
+    color: rgba($color-black, 0.4);
+    transition: all .4s;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 3.5rem;
+}
+
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+    color: $color-black;
+    box-shadow: 0 0.5rem 0.7rem rgba($color-black, 0.5);
+}
+
+.swiper-button-prev:active,
+.swiper-button-next:active {
+    color: $color-black;
+    box-shadow: 0 0.3rem 0.4rem rgba($color-black, 0.5);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    z-index: 2;
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+    color:$color-primary;
+}
+
+.swiper-button-prev {
+    left: 27.3rem;
+
+    @include respond(tab-port) {
+        left: 12.5rem;
+    }
+
+
+    @include respond(phone) {
+        left: 23.3rem;
+    }
+
+
+    @include respond(tiny-phone) {
+        left: 2.8rem;
+    }
+}
+
+.swiper-button-next {
+    right: 27.3rem;
+
+    @include respond(tab-port) {
+        right: 12.3rem;
+    }
+
+
+    @include respond(phone) {
+        right: 23.3rem;
+    }
+
+
+    @include respond(tiny-phone) {
+        right: 2.8rem;
+    }
+}

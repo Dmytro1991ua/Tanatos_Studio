@@ -1,0 +1,84 @@
+.cards {
+    position: relative;
+
+    &__body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include respond(tab-land) {
+            align-items: flex-start;
+        }
+
+
+        @include respond(tab-port) {
+            flex-wrap: wrap;
+        }
+    }
+
+    &__team-member {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transition: all .4s;
+        cursor: pointer;
+    }
+
+    &__photo {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        position: relative;
+        transition: all .3s ease;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        filter: grayscale(100%);
+        opacity: .5;
+        transition: all .3s ease;
+
+        @include respond(phone) {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+    }
+
+    &__info {
+        max-width: 24rem;
+        font-size: 1.4rem;
+        line-height: 2.2rem;
+        text-align: center;
+    }
+
+    &__slider-items {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__team-member:hover {
+        transform: scale(1.06);
+
+        @include respond(tab-port) {
+            transform: scale(1);
+        }
+    }
+
+    &__team-member:hover &__content {
+        filter: grayscale(0);
+        opacity: 1;
+    }
+
+    &__team-member:hover &__photo {
+        border-bottom: 5px solid $color-light-orange;
+    }
+}
+
+//slider
+.slider-2 {
+    padding-top: 2rem;
+    padding-bottom: 11rem;
+}

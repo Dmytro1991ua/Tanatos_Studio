@@ -1,0 +1,136 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 1.5rem;
+
+    @include respond(phone) {
+        max-width: none;
+        width: 100%;
+    }
+
+
+    &__group {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        width: 100%;
+
+        @include respond(phone) {
+            flex-direction: column;
+            align-items: baseline;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+
+        @include respond(phone) {
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+
+        &:not(:last-child) {
+            margin-right: 1.7rem;
+
+            @include respond(phone) {
+                margin-right: 0rem;
+            }
+        }
+    }
+
+    &__input {
+        width: 28rem;
+        border-radius: 1rem;
+        padding: 1.4rem 0 1.4rem 1.4rem;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+
+        &::placeholder {
+            @include placeholder;
+        }
+
+        &--focused:focus:invalid {
+            border: 3px solid $color-light-orange;
+        }
+    }
+
+    &__label {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: $color-secondary;
+        margin-top: .8rem;
+        margin-left: 1.6rem;
+        transition: all .5s;
+    }
+
+    &__comment {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+    }
+
+    &__textarea {
+        width: 58rem;
+        height: 15rem;
+        padding: 1.4rem 0 1.4rem 1.4rem;
+
+        @include respond(phone) {
+            width: 100%;
+        }
+
+
+        &::placeholder {
+            @include placeholder;
+        }
+    }
+
+    &__input:placeholder-shown + &__label,
+    &__textarea:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem);
+    }
+
+    &__input,
+    &__textarea {
+        cursor: pointer;
+    }
+
+    &__input:focus:valid,
+    &__textarea:focus:valid {
+        @include input-focus;
+    }
+
+    &__click {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @include respond(phone) {
+            flex-direction: column;
+        }
+
+
+        &:not(:last-child) {
+            margin-left: 22.5rem;
+
+            @include respond(phone) {
+                margin-left: 0rem;
+            }
+        }
+    }
+}

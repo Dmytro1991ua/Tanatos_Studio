@@ -1,0 +1,165 @@
+.navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 6rem;
+    z-index: 3;
+
+    @include respond(phone) {
+        padding: 2rem;
+        background-color: rgba($color-primary, 0.9);
+    }
+
+
+    @include respond(tiny-phone) {
+        padding: 2rem .3rem;
+    }
+
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__logo {
+        cursor: pointer;
+        position: relative;
+        z-index: 3;
+        animation: swing 1s ease-out 1s 5;
+    }
+
+    &__menu {
+        cursor: pointer;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+        color: $color-secondary;
+        position: relative;
+        z-index: 3;
+        margin-right: 2rem;
+    }
+
+    &__toggle {
+        position: relative;
+
+        &,
+        &::before,
+        &::after {
+            width: 2.6rem;
+            height: 3px;
+            background-color: $color-secondary;
+            display: inline-block;
+            position: relative;
+            top: 0.9rem;
+            left: 2rem;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all 0.4s ease;
+        }
+
+        &::before {
+            top: -.8rem;
+        }
+
+        &::after {
+            top: .8rem;
+        }
+    }
+}
+
+.nav {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: lighten($color-primary, 15%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 4;
+    animation: fadeIn .4s ease;
+    transition: all .4s ease;
+    opacity: 0;
+    visibility: hidden;
+    overflow-y: scroll;
+
+    &__item {
+        list-style: none;
+        margin-bottom: 2rem;
+        position: relative;
+
+        @include respond(phone) {
+            margin-bottom: 1.5rem;
+        }
+    }
+
+    &__link:link,
+    &__link:visited {
+        display: inline-block;
+        text-decoration: none;
+        font-size: 2rem;
+        color: $color-secondary;
+        text-transform: uppercase;
+        letter-spacing: .8rem;
+        padding: 1rem 2rem;
+        background-image: linear-gradient(120deg, transparent 0%, transparent 50%, $color-secondary 50%);
+        background-size: 225%;
+        transition: all .5s;
+
+        &:hover,
+        &:active {
+            background-position: 100%;
+            transform: traslateX(1rem);
+            color: $color-black;
+            font-weight: 600;
+            transition: all .3s;
+        }
+    }
+}
+
+//styles for sticky class for navigation while scrolling down
+.navigation.sticky {
+    background-color: rgba($color-primary, 0.9);
+    padding-top: 0rem;
+    padding: 2rem 2rem;
+    transition: all .4s;
+    animation: fixedHeader 1s ease;
+
+    @include respond(smallest-phone) {
+        padding: 2rem .4rem;
+    }
+}
+
+//style .show in order to hide or show nav on click to toggle button
+.nav.show {
+    opacity: 1;
+    visibility: visible;
+    top: 0;
+}
+
+.navigation__toggle.active {
+    background-color: transparent;
+}
+
+.navigation__toggle.active:before {
+    transform: rotate(135deg);
+    top: 0;
+}
+
+.navigation__toggle.active:after {
+    transform: rotate(-135deg);
+    top: 0;
+}

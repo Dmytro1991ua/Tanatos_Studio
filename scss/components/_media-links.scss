@@ -1,0 +1,41 @@
+// In order to make SVG icon be a link (clickble link) we need to wrap <object> up which included SVG icon with <span> tag to make it display: inline-block. Reuseble block of code (section cards and form)
+
+.media-links {
+    &__link:link,
+    &__link:visited { // <a>
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        height: 100%;
+
+        &:not(:last-child) {
+            margin-right: 1.2rem;
+        }
+    }
+
+    &__span { // <span>
+        display: inline-block;
+        height: 100%;
+        transition: all .4s;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+    }
+
+    &__icon {
+        width: 2.4rem;
+        height: 2.4rem;
+        position: relative;
+        z-index: -1;
+
+        &--sized {
+            width: 3.2rem;
+            height: 3.2rem;
+
+            &:hover {
+                transform: scale(1.4);
+            }
+        }
+    }
+}

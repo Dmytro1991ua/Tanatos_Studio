@@ -1,0 +1,52 @@
+.header {
+    background: url(../img/bg-header-small.png) (center / cover) no-repeat fixed;
+    width: 100%;
+    max-width: 100%;
+    min-height: 100vh;
+    position: relative;
+
+    @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
+        background: url(../img/bg-header.png) (center / cover) no-repeat fixed;
+    }
+
+    @include respond(tab-port) {
+        background: url(../img/bg-header-small.png) (center / cover) no-repeat;
+    }
+
+
+    &__body {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+    }
+
+    &__paragraph {
+        max-width: 54.5rem;
+        margin: 0 auto;
+        font-size: 1.5rem;
+        font-weight: 400;
+        line-height: 2.2rem;
+        color: $color-secondary;
+        padding-bottom: 3.5rem;
+
+        @include respond(smallest-phone) {
+            max-width: 41.5rem;
+        }
+    }
+
+    &__arrow-down {
+        position: absolute;
+        top: 92%;
+        left: 48.6%;
+        transform: translate(-50%, -50%);
+        animation: pulse 1s ease-out 1s infinite;
+
+        @include respond(phone) {
+            top: 85%;
+            left: 47%;
+        }
+    }
+}

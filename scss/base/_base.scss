@@ -1,0 +1,41 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    height: 100%;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+    @include respond(tab-land) {
+        font-size: 59.25%;
+    }
+
+
+    @include respond(tab-port) {
+        font-size: 58.25%;
+    }
+
+
+    @include respond(laptop-big) {
+        font-size: 85%;
+    }
+}
+
+body {
+    font-family: 'Open Sans', sans-serif, Geneva, Arial;
+    box-sizing: border-box;
+}
+
+body.lock {
+    overflow: hidden;
+}
+
+::selection {
+    background: rgba($color-primary, 0.6);
+    color: $color-secondary;
+}

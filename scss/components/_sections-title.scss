@@ -1,0 +1,56 @@
+.sections-title {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 44%;
+        top: 26%;
+        bottom: 0;
+        right: 44%;
+        width: 0;
+        height: 3px;
+        background-color: $color-light-orange;
+        transition: all .3s linear;
+    }
+
+    &:hover::before {
+        width: 12%;
+
+        @include respond(tiny-phone) {
+            width: 20%;
+            left: 41%;
+        }
+    }
+
+    &__name {
+        font-size: 2.5rem;
+        line-height: 3rem;
+        text-transform: uppercase;
+        color: $color-primary;
+
+        &--highlight {
+            color: $color-tertiary;
+        }
+
+        &--white {
+            color: $color-secondary;
+        }
+    }
+
+    &__paragraph {
+        max-width: 50.4rem;
+        font-size: 1.3rem;
+        line-height: 2.4rem;
+
+        &--white {
+            color: $color-secondary;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+// Form Section
+@mixin input-focus {
+    box-shadow: 0 1rem 1.5rem rgba($color-black, 0.3);
+    border: 3px solid $color-light-green;
+    background-color: $color-light-grey;
+    color: $color-black;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+// Form Section
+@mixin placeholder {
+    font-family: inherit;
+    font-size: 1.3rem;
+    color: $color-primary;
+}
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == smallest-phone {
+        @media only screen and (max-width: 29.4em) {
+            @content;
+        } //470px
+    }
+
+    @if $breakpoint == tiny-phone {
+        @media only screen and (max-width: 39.2em) {
+            @content;
+        } //626px
+    }
+
+    @if $breakpoint == phone {
+        @media only screen and (max-width: 48em) {
+            @content;
+        } //767px
+    }
+
+    @if $breakpoint == tab-port {
+        @media only screen and (max-width: 62em) {
+            @content;
+        } //992px
+    }
+
+    @if $breakpoint == tab-land {
+        @media only screen and (max-width: 75em) {
+            @content;
+        } //1200px
+    }
+
+    @if $breakpoint == laptop-big {
+        @media only screen and (min-width: 100em) {
+            @content;
+        } //1600px
+    }
+
+    @if $breakpoint == laptop-huge {
+        @media only screen and (min-width: 122em) {
+            @content;
+        } //1950px
+    }
+}

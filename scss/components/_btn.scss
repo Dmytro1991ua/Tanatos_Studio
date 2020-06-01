@@ -1,0 +1,61 @@
+.btn {
+    font-size: 1.4rem;
+    padding: 1.4rem 5.5rem;
+    background-color: $color-tertiary;
+    color: $color-secondary;
+    border: none;
+    border-radius: 1rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all .4s;
+
+    &:not(:last-child) {
+        margin-right: 1.5rem;
+
+        @include respond(tiny-phone) {
+            margin-right: .5rem;
+        }
+    }
+
+    //Header section
+    &--transparent {
+        background-color: transparent;
+        border: 1.5px solid $color-primary;
+        padding: 1.28rem 3.9rem;
+    }
+
+    // Subscribe section
+    &--changed {
+        margin-top: -2.38rem;
+    }
+
+    // Form component
+    &--ajusted {
+        &:not(:last-child) {
+            margin-right: 19.8rem;
+
+            @include respond(phone) {
+                margin-right: 0rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &--white:link,
+    &--white:visited {
+        background-color: $color-secondary;
+        color: $color-tertiary;
+        text-decoration: none;
+        font-weight: 600;
+    }
+
+    &:hover {
+        transform: translateY(-0.4rem);
+        box-shadow: 0 0.6rem 0rem rgba(0, 0, 0, 0.4);
+    }
+
+    &:focus {
+        animation: pulse 1s ease-in-out infinite;
+        box-shadow: 0 0.5rem 1.5rem rgba($color-black, 0.7);
+    }
+}

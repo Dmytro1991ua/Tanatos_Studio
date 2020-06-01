@@ -1,0 +1,73 @@
+.copyright {
+    padding: 3rem 0;
+    background-color: $color-primary;
+    position: relative;
+
+    @include respond(phone) {
+        padding: 2rem 0;
+    }
+
+
+    &__body {
+        display: flex;
+        justify-content: space-between;
+
+        @include respond(phone) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__year,
+    &__author {
+        font-size: 1.3rem;
+        color: $color-secondary;
+        text-transform: uppercase;
+
+        @include respond(phone) {
+            &:not(:last-child) {
+                margin-bottom: 1rem;
+            }
+        }
+    }
+
+    &__author {
+        &--modified::after {
+            content: ".";
+            color: $color-red;
+            margin-left: .3rem;
+        }
+    }
+}
+
+// btn scroll to top starts
+.btn-top-scroll {
+    display: inline-block;
+    position: fixed;
+    bottom: 4%;
+    right: 1.2%;
+    text-decoration: none;
+    background-color: $color-light-orange;
+    color: $color-primary;
+    border-radius: 50%;
+    text-align: center;
+    padding: .7rem 0.8rem;
+    box-shadow: 0 0.3rem 0.4rem rgba(0, 0, 0, 0.5);
+    animation: pulse 1s ease-out 1s infinite;
+    opacity: 0;
+    transition: opacity .6s  linear;
+
+    @include respond(phone) {
+        right: 3%;
+    }
+
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
+}
+
+.btn-top-scroll.is-visible {
+    opacity: 1;
+}
