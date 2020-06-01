@@ -53,3 +53,16 @@ var swiper = new Swiper('.slider-2', {
 
 //wow js
 new WOW().init();
+
+// Fixed Header on Scroll
+window.onscroll = function () {
+    const scrollTop = document.documentElement.scrollTop;
+
+    if (window.innerWidth > 768) {
+        if (scrollTop > 70) {
+            document.querySelector(".navigation").classList.add("sticky");
+        } else {
+            document.querySelector(".navigation").classList.remove("sticky");
+        }
+    }
+}
