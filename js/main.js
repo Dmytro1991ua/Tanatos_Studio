@@ -142,3 +142,64 @@ window.addEventListener("scroll", scrollBtn);
 scrollUpToHeader.addEventListener("click", function () { //click for a changes on a certain button and scroll up to a header
     smoothScroll(".header", 500); //here we call smoothScroll() function
 });
+
+//form validation
+
+const form = document.querySelector(".form");
+const subscribe = document.querySelector(".section-subscribe__form");
+
+function handleForm(event) { //to prevent from refreshing page on submit
+    event.preventDefault();
+    form.reset(); //метод reset() сбрасывает все значение в полях формы по умолчянию
+    subscribe.reset();
+}
+
+form.addEventListener("submit", handleForm);
+subscribe.addEventListener("submit", handleForm);
+
+
+//Modal Window
+
+const openModalButtons = document.querySelectorAll("[data-modal-target]");
+const closeModalButtons = document.querySelectorAll("[data-close-button]");
+const overlay = document.querySelector(".modal__overlay");
+
+//functions
+
+function openModal(modal) {
+    if (modal === null) return;
+    modal.classList.add("active"); //if we do have a modal we want to add "active" class and overlay class
+    overlay.classList.add("active");
+    document.querySelector("body").classList.add("lock"); //adding "lock" class to a body when a modal window is active in order to prevet body from scrolling
+}
+
+function closeModal(modal) {
+    if (modal === null) return;
+    modal.classList.remove("active"); //if we do have a modal we want to remove "active" class and overlay class
+    overlay.classList.remove("active");
+    document.querySelector("body").classList.remove("lock");
+}
+
+// iterating through each button to open modal and close it
+
+openModalButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modal = document.querySelector(btn.dataset.modalTarget); // here we get a modal that is pointing to. == button.dataset allows is to access to data atribute as if they are JS objects == modalTarget -- is going to get data attribute from HTML (#modal, #modal-1 ...)
+        openModal(modal);
+    });
+});
+
+closeModalButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const modal = btn.closest(".modal__body"); //here we access the closest parent element with class modal of this button (button inside modal class).
+        closeModal(modal);
+    });
+});
+
+//event listeners 
+overlay.addEventListener("click", () => { // remove modal window by clicking outside a modal window
+    const modals = document.querySelectorAll(".modal__body.active"); //here find all modals that are currently open (with class active)
+    modals.forEach(modal => {
+        closeModal(modal);
+    });
+});
