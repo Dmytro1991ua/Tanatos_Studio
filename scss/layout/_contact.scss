@@ -1,10 +1,10 @@
 .contact {
     padding-top: 5.5rem;
     padding-bottom: 7.5rem;
-    background: url(../img/bg-contact@3x.-small.png) (center / cover) no-repeat fixed;
+    background: url(../img/bg-contact@3x.-small.jpg) (center / cover) no-repeat fixed;
 
     @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
-        background: url(../img/bg-contact@3x.png) (center / cover) no-repeat fixed;
+        background: url(../img/bg-contact@3x.jpg) (center / cover) no-repeat fixed;
     }
 
     @include respond(phone) {

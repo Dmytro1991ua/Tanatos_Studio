@@ -1,16 +1,16 @@
 .header {
-    background: url(../img/bg-header-small.png) (center / cover) no-repeat fixed;
+    background: url(../img/bg-header-small.jpg) (center / cover) no-repeat fixed;
     width: 100%;
     max-width: 100%;
     min-height: 100vh;
     position: relative;
 
     @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
-        background: url(../img/bg-header.png) (center / cover) no-repeat fixed;
+        background: url(../img/bg-header.jpg) (center / cover) no-repeat fixed;
     }
 
     @include respond(tab-port) {
-        background: url(../img/bg-header-small.png) (center / cover) no-repeat;
+        background: url(../img/bg-header-small.jpg) (center / cover) no-repeat;
     }
 
 

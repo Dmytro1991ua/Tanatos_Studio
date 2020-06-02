@@ -122,7 +122,7 @@
         &:hover,
         &:active {
             background-position: 100%;
-            transform: traslateX(1rem);
+            transform: translateX(1rem);
             color: $color-black;
             font-weight: 600;
             transition: all .3s;

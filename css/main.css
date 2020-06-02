@@ -1040,10 +1040,10 @@ th {
 .contact {
   padding-top: 5.5rem;
   padding-bottom: 7.5rem;
-  background: url(../img/bg-contact@3x.-small.png) center/cover no-repeat fixed; }
+  background: url(../img/bg-contact@3x.-small.jpg) center/cover no-repeat fixed; }
   @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
     .contact {
-      background: url(../img/bg-contact@3x.png) center/cover no-repeat fixed; } }
+      background: url(../img/bg-contact@3x.jpg) center/cover no-repeat fixed; } }
   @media only screen and (max-width: 48em) {
     .contact {
       padding-top: 3.5rem;
@@ -1122,17 +1122,17 @@ th {
   opacity: 1; }
 
 .header {
-  background: url(../img/bg-header-small.png) center/cover no-repeat fixed;
+  background: url(../img/bg-header-small.jpg) center/cover no-repeat fixed;
   width: 100%;
   max-width: 100%;
   min-height: 100vh;
   position: relative; }
   @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
     .header {
-      background: url(../img/bg-header.png) center/cover no-repeat fixed; } }
+      background: url(../img/bg-header.jpg) center/cover no-repeat fixed; } }
   @media only screen and (max-width: 62em) {
     .header {
-      background: url(../img/bg-header-small.png) center/cover no-repeat; } }
+      background: url(../img/bg-header-small.jpg) center/cover no-repeat; } }
   .header__body {
     position: absolute;
     top: 50%;
@@ -1299,7 +1299,7 @@ th {
     transition: all .5s; }
     .nav__link:link:hover, .nav__link:link:active, .nav__link:visited:hover, .nav__link:visited:active {
       background-position: 100%;
-      transform: traslateX(1rem);
+      transform: translateX(1rem);
       color: #000000;
       font-weight: 600;
       transition: all .3s; }
@@ -1340,11 +1340,11 @@ th {
 
 .review-section {
   padding: 6.5rem 0;
-  background: url(../img/bg-review-small.png) center/cover no-repeat fixed;
+  background: url(../img/bg-review-small.jpg) center/cover no-repeat fixed;
   position: relative; }
   @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
     .review-section {
-      background: url(../img/bg-review.png) center/cover no-repeat fixed; } }
+      background: url(../img/bg-review.jpg) center/cover no-repeat fixed; } }
   @media only screen and (max-width: 48em) {
     .review-section {
       padding: 3rem 0; } }
@@ -1395,10 +1395,13 @@ th {
 .section-subscribe {
   padding-top: 7rem;
   padding-bottom: 5rem;
-  background: url(../img/bg-subscribe-small.png) center/cover no-repeat fixed;
+  background: url(../img/bg-subscribe-small.jpg) center/cover no-repeat fixed;
   width: 100%;
   max-width: 100%;
   height: 100%; }
+  @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
+    .section-subscribe {
+      background: url(../img/bg-subscribe.jpg) center/cover no-repeat fixed; } }
   @media only screen and (max-width: 48em) {
     .section-subscribe {
       padding-top: 4rem;

@@ -1,10 +1,10 @@
 .review-section {
     padding: 6.5rem 0;
-    background: url(../img/bg-review-small.png) (center / cover) no-repeat fixed;
+    background: url(../img/bg-review-small.jpg) (center / cover) no-repeat fixed;
     position: relative;
 
     @media only screen and (min-resolution: 192dpi) and (min-width: 48em), (min-width: 122em) {
-        background: url(../img/bg-review.png) (center / cover) no-repeat fixed;
+        background: url(../img/bg-review.jpg) (center / cover) no-repeat fixed;
     }
 
     @include respond(phone) {
