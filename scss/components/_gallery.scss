@@ -72,6 +72,10 @@
         font-size: 1.2rem;
         line-height: 2rem;
         color: $color-secondary;
+
+        @include respond(phone) {
+            font-size: 1.4rem;
+        }
     }
 
     &__button {

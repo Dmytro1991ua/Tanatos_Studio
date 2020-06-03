@@ -1,66 +1,72 @@
 .section-features {
-	padding-top: 7.5rem;
-	padding-bottom: 5.5rem;
+    padding-top: 7.5rem;
+    padding-bottom: 5.5rem;
 
-	@include respond(phone) {
-		padding-top: 4.5rem;
-		padding-bottom: 3.5rem;
-	} 
+    @include respond(phone) {
+        padding-top: 4.5rem;
+        padding-bottom: 3.5rem;
+    }
 
-	&__body {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: center;
-		align-items: center;
-	}
 
-	&__icon {
-		transition: all .2s ease;
+    &__body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
 
-		&:hover {
-			transform: scale(1.2);
-			cursor: pointer;
-		}
-	}
+    &__icon {
+        transition: all .2s ease;
 
-	&__content {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		
+        &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    }
 
-		@include respond(tab-port) {
-			 flex: 0 1 40%;
-		}
+    &__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
 
-		@include respond(phone) {
-			flex: 0 1 100%;
-		}
+        @include respond(tab-port) {
+            flex: 1 1 40%;
+        }
 
-		&:not(:last-child) {
-			margin-right: 6rem;
-			
-			@include respond(tab-port) {
-				 margin-right: 0rem;
-				 margin-bottom: 2rem;
-			}
 
-		}
-	}
+        @include respond(phone) {
+            flex: 0 1 100%;
+        }
 
-	&__info {
-		width: 100%;
-		max-width: 16.2rem;
-		font-size: 1.2rem;
-		line-height: 1.6rem;
-		color: $color-primary;
-		letter-spacing: .1rem;
-		text-align: center;
 
-		@include respond(tab-port) {
-			max-width: 30rem;
-		}
-	}
+        &:not(:last-child) {
+            margin-right: 6rem;
 
+            @include respond(tab-port) {
+                margin-right: 0rem;
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    &__info {
+        width: 100%;
+        max-width: 16.2rem;
+        font-size: 1.2rem;
+        line-height: 1.6rem;
+        color: $color-primary;
+        letter-spacing: .1rem;
+        text-align: center;
+
+        @include respond(tab-port) {
+            max-width: 30rem;
+        }
+
+
+        @include respond(phone) {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
 }

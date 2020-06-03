@@ -49,6 +49,11 @@
         font-size: 1.3rem;
         line-height: 2.4rem;
 
+        @include respond(phone) {
+            font-size: 1.4rem;
+        }
+
+
         &--white {
             color: $color-secondary;
         }

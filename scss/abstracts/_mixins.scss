@@ -13,6 +13,10 @@
     font-family: inherit;
     font-size: 1.3rem;
     color: $color-primary;
+
+    @include respond(phone) {
+        font-size: 1.4rem;
+    }
 }
 
 @mixin respond($breakpoint) {

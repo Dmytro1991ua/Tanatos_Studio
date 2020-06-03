@@ -9,6 +9,11 @@
     text-transform: uppercase;
     transition: all .4s;
 
+    @include respond(phone) {
+        font-size: 1.5rem;
+    }
+
+
     &:not(:last-child) {
         margin-right: 1.5rem;
 

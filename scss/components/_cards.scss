@@ -51,6 +51,10 @@
         font-size: 1.4rem;
         line-height: 2.2rem;
         text-align: center;
+
+        @include respond(phone) {
+            font-size: 1.47rem;
+        }
     }
 
     &__slider-items {

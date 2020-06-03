@@ -468,6 +468,9 @@ th {
   @media only screen and (max-width: 62em) {
     .heading-3 {
       font-size: 1.6rem; } }
+  @media only screen and (max-width: 48em) {
+    .heading-3 {
+      font-size: 1.8rem; } }
 
 .heading-4 {
   font-size: 1.5rem;
@@ -534,6 +537,9 @@ th {
   cursor: pointer;
   text-transform: uppercase;
   transition: all .4s; }
+  @media only screen and (max-width: 48em) {
+    .btn {
+      font-size: 1.5rem; } }
   .btn:not(:last-child) {
     margin-right: 1.5rem; }
     @media only screen and (max-width: 39.2em) {
@@ -603,6 +609,9 @@ th {
     font-size: 1.4rem;
     line-height: 2.2rem;
     text-align: center; }
+    @media only screen and (max-width: 48em) {
+      .cards__info {
+        font-size: 1.47rem; } }
   .cards__slider-items {
     display: flex;
     justify-content: center;
@@ -665,6 +674,9 @@ th {
       font-family: inherit;
       font-size: 1.3rem;
       color: #3b434c; }
+      @media only screen and (max-width: 48em) {
+        .form__input::placeholder {
+          font-size: 1.4rem; } }
     .form__input--focused:focus:invalid {
       border: 3px solid rgba(255, 119, 48, 0.8); }
   .form__label {
@@ -693,6 +705,9 @@ th {
       font-family: inherit;
       font-size: 1.3rem;
       color: #3b434c; }
+      @media only screen and (max-width: 48em) {
+        .form__textarea::placeholder {
+          font-size: 1.4rem; } }
   .form__input:placeholder-shown + .form__label,
   .form__textarea:placeholder-shown + .form__label {
     opacity: 0;
@@ -779,6 +794,9 @@ th {
     font-size: 1.2rem;
     line-height: 2rem;
     color: #ffffff; }
+    @media only screen and (max-width: 48em) {
+      .gallery__info {
+        font-size: 1.4rem; } }
   .gallery__button {
     text-align: center; }
   .gallery__link:link, .gallery__link:visited {
@@ -903,7 +921,7 @@ th {
   padding-bottom: 1rem; }
 
 .modal__text {
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   padding: 1.5rem 0;
   max-width: 36rem; }
 
@@ -973,6 +991,9 @@ th {
     max-width: 50.4rem;
     font-size: 1.3rem;
     line-height: 2.4rem; }
+    @media only screen and (max-width: 48em) {
+      .sections-title__paragraph {
+        font-size: 1.4rem; } }
     .sections-title__paragraph--white {
       color: #ffffff; }
 
@@ -1148,9 +1169,14 @@ th {
     line-height: 2.2rem;
     color: #ffffff;
     padding-bottom: 3.5rem; }
+    @media only screen and (max-width: 48em) {
+      .header__paragraph {
+        font-size: 1.7rem; } }
     @media only screen and (max-width: 29.4em) {
       .header__paragraph {
-        max-width: 41.5rem; } }
+        max-width: 41.5rem;
+        margin: 0 .3rem;
+        line-height: 2.3rem; } }
   .header__arrow-down {
     position: absolute;
     top: 92%;
@@ -1186,7 +1212,7 @@ th {
     align-items: center; }
     @media only screen and (max-width: 62em) {
       .section-features__content {
-        flex: 0 1 40%; } }
+        flex: 1 1 40%; } }
     @media only screen and (max-width: 48em) {
       .section-features__content {
         flex: 0 1 100%; } }
@@ -1207,6 +1233,10 @@ th {
     @media only screen and (max-width: 62em) {
       .section-features__info {
         max-width: 30rem; } }
+    @media only screen and (max-width: 48em) {
+      .section-features__info {
+        font-size: 1.5rem;
+        line-height: 2rem; } }
 
 .navigation {
   position: fixed;
@@ -1447,6 +1477,9 @@ th {
       font-family: inherit;
       font-size: 1.3rem;
       color: #3b434c; }
+      @media only screen and (max-width: 48em) {
+        .section-subscribe__email::placeholder {
+          font-size: 1.38rem; } }
     .section-subscribe__email:focus {
       box-shadow: 0 1rem 1.5rem rgba(0, 0, 0, 0.3);
       border: 3px solid #90ee90;
@@ -1458,7 +1491,7 @@ th {
       border: 3px solid rgba(255, 119, 48, 0.8); }
   .section-subscribe__label {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #ffffff;
     margin-left: .7rem;
