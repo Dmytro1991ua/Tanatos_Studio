@@ -922,7 +922,7 @@ th {
 
 .modal__text {
   font-size: 1.35rem;
-  padding: 1.5rem 0;
+  padding: 1.5rem .4rem;
   max-width: 36rem; }
 
 .modal__button:link, .modal__button:visited {

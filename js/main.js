@@ -56,38 +56,42 @@ document.addEventListener("DOMContentLoaded", () => {
     new WOW().init();
 
     // Fixed Header on Scroll
-    window.onscroll = function () {
-        const scrollTop = document.documentElement.scrollTop;
+    function fixedHeader() {
+        window.onscroll = function () {
+            const scrollTop = document.documentElement.scrollTop;
 
-        if (window.innerWidth > 768) {
-            if (scrollTop > 70) {
-                document.querySelector(".navigation").classList.add("sticky");
-            } else {
-                document.querySelector(".navigation").classList.remove("sticky");
+            if (window.innerWidth > 768) {
+                if (scrollTop > 70) {
+                    document.querySelector(".navigation").classList.add("sticky");
+                } else {
+                    document.querySelector(".navigation").classList.remove("sticky");
+                }
             }
         }
     }
 
     //open navbar on click to a hamburger menu
-    const toggleBtn = document.querySelector(".navigation__menu");
-    toggleBtn.addEventListener("click", () => {
-        document.querySelector(".nav").classList.toggle("show");
-        document.querySelector(".navigation__toggle").classList.toggle("active");
-        document.querySelector("body").classList.toggle("lock"); //class to apply and remove overflow: hidden to a body when a nav in active
-    });
-
-    //close a navigation on click to a specific link
-    const navbar = document.querySelector(".nav");
-    const links = navbar.querySelectorAll(".nav__link"); //select all links (<a>)
-
-    //loop through all links
-    links.forEach(function (link) {
-        link.addEventListener("click", () => {
+    function openCloseNav() {
+        const toggleBtn = document.querySelector(".navigation__menu");
+        toggleBtn.addEventListener("click", () => {
             document.querySelector(".nav").classList.toggle("show");
-            document.querySelector("body").classList.remove("lock");
             document.querySelector(".navigation__toggle").classList.toggle("active");
+            document.querySelector("body").classList.toggle("lock"); //class to apply and remove overflow: hidden to a body when a nav in active
         });
-    });
+
+        //close a navigation on click to a specific link
+        const navbar = document.querySelector(".nav");
+        const links = navbar.querySelectorAll(".nav__link"); //select all links (<a>)
+
+        //loop through all links
+        links.forEach(function (link) {
+            link.addEventListener("click", () => {
+                document.querySelector(".nav").classList.toggle("show");
+                document.querySelector("body").classList.remove("lock");
+                document.querySelector(".navigation__toggle").classList.toggle("active");
+            });
+        });
+    }
 
     //scrolling (animation) to the next section on click to a btn
 
@@ -120,43 +124,49 @@ document.addEventListener("DOMContentLoaded", () => {
         requestAnimationFrame(animation); // pass animation () function as parameter. The "window.requestAnimationFrame()" method tells the browser that you wish to perform an animation and requests that the browser calls a specified function to update an animation before the next repaint.
     }
 
-    const headerArrowDown = document.querySelector(".header__arrow-down");//select a header arrow down
+    function smoothScrollDown() {
+        const headerArrowDown = document.querySelector(".header__arrow-down");//select a header arrow down
 
-    headerArrowDown.addEventListener("click", function () { //click for a changes on click to header arrow down and scroll to a section-features
-        smoothScroll(".section-features", 500); //here we call smoothScroll() function
-    });
+        headerArrowDown.addEventListener("click", function () { //click for a changes on click to header arrow down and scroll to a section-features
+            smoothScroll(".section-features", 500); //here we call smoothScroll() function
+        });
+    }
 
     //btn scroll to top of the header
-    var scrollUpToHeader = document.querySelector(".btn-top-scroll");//select btn-to-top
+    function scrollToTop() {
+        var scrollUpToHeader = document.querySelector(".btn-top-scroll");//select btn-to-top
 
-    const scrollBtn = function () { //function to display and hide scroll to top button -- scrollUpToHeader
-        if (window.scrollY >= 300) {
-            scrollUpToHeader.classList.add("is-visible");
-        } else {
-            scrollUpToHeader.classList.remove("is-visible");
+        const scrollBtn = function () { //function to display and hide scroll to top button -- scrollUpToHeader
+            if (window.scrollY >= 300) {
+                scrollUpToHeader.classList.add("is-visible");
+            } else {
+                scrollUpToHeader.classList.remove("is-visible");
+            }
         }
+
+        scrollUpToHeader.addEventListener("click", function () { //click for a changes on a certain button and scroll up to a header
+            smoothScroll(".header", 500); //here we call smoothScroll() function
+        });
+
+        window.addEventListener("scroll", scrollBtn);
     }
 
-    window.addEventListener("scroll", scrollBtn);
-
-
-    scrollUpToHeader.addEventListener("click", function () { //click for a changes on a certain button and scroll up to a header
-        smoothScroll(".header", 500); //here we call smoothScroll() function
-    });
 
     //form validation
+    function formValidation() {
+        const form = document.querySelector(".form");
+        const subscribe = document.querySelector(".section-subscribe__form");
 
-    const form = document.querySelector(".form");
-    const subscribe = document.querySelector(".section-subscribe__form");
+        function handleForm(event) { //to prevent from refreshing page on submit
+            event.preventDefault();
+            form.reset(); //метод reset() сбрасывает все значение в полях формы по умолчянию
+            subscribe.reset();
+        }
 
-    function handleForm(event) { //to prevent from refreshing page on submit
-        event.preventDefault();
-        form.reset(); //метод reset() сбрасывает все значение в полях формы по умолчянию
-        subscribe.reset();
+        form.addEventListener("submit", handleForm);
+        subscribe.addEventListener("submit", handleForm);
     }
 
-    form.addEventListener("submit", handleForm);
-    subscribe.addEventListener("submit", handleForm);
 
 
     //Modal Window
@@ -204,5 +214,14 @@ document.addEventListener("DOMContentLoaded", () => {
             closeModal(modal);
         });
     });
+
+
+    //call functions
+    fixedHeader();
+    openCloseNav();
+    smoothScrollDown();
+    scrollToTop();
+    formValidation();
+
 
 });
