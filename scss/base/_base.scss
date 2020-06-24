@@ -35,6 +35,11 @@ body.lock {
     overflow: hidden;
 }
 
+.wrapper {
+    min-width: 100%;
+    overflow: hidden;
+}
+
 ::selection {
     background: rgba($color-primary, 0.6);
     color: $color-secondary;
