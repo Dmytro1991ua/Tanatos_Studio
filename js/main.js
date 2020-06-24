@@ -55,6 +55,16 @@ document.addEventListener("DOMContentLoaded", () => {
     //wow js
     new WOW().init();
 
+    // Preloader 
+    function runPreloader() {
+        const preloader = document.querySelector(".preloader-container").classList.add("opacity-0");
+        setTimeout(function () {
+            preloader.style.display = "none";
+        }, 1000);
+    }
+
+    window.addEventListener("load", runPreloader);
+
     // Fixed Header on Scroll
     function fixedHeader() {
         window.onscroll = function () {

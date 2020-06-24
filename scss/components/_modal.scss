@@ -60,8 +60,10 @@
     }
 
     &__img {
-        max-width: 100%;
+        width: auto;
         height: auto;
+        max-width: 100%;
+        max-height: 500px;
         overflow: hidden;
         margin-bottom: 1rem;
 
